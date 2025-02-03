@@ -1,4 +1,4 @@
-﻿  jhlabs.cpp
+  jhlabs.cpp
 f:\src\jhlabs\jhlabs\image\convolvefilter.h(17): error C2146: Syntaxfehler: Fehlendes ';' vor Bezeichner 'com'
 f:\src\jhlabs\jhlabs\image\convolvefilter.h(17): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
 f:\src\jhlabs\jhlabs\image\convolvefilter.h(17): error C2143: Syntaxfehler: Es fehlt ';' vor '.'

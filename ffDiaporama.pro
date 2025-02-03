@@ -45,6 +45,12 @@ TARGET          += ffDiaporama_lib
 SUBDIRS         += src/ffDiaporama/ffdiaporama.pro 
 TARGET          += ffDiaporama
 
+# ffDiaporama resources
+SUBDIRS         += ffDiaporama_rsc
+
+# ffDiaporama texturemate
+SUBDIRS         += ffDiaporama_texturemate
+
 #SUBDIRS         += src/ffDiaporama/ffdiaporama_cl.pro 
 #TARGET          += ffDiaporama_cl
 
@@ -52,6 +58,7 @@ TARGET          += ffDiaporama
 #TARGET          += transitions
 
 ffDiaporama.depends =  ffDiaporama_lib
+ffDiaporama_texturemate.depends = ffDiaporama_rsc
 
 # Translation files
 TRANSLATIONS += locale/ffDiaporama_cz.ts \

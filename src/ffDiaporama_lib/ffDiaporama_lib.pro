@@ -36,6 +36,8 @@ greaterThan(QT_MAJOR_VERSION,4) {
     CONFIG += help
 }
 
+QMAKE_CXXFLAGS_WARN_ON += -Wno-overloaded-virtual
+
 QMAKE_STRIP = echo
 APPFOLDER   = ffDiaporama
 TARGET      = ffDiaporama_lib

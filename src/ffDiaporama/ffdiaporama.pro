@@ -70,7 +70,7 @@ unix {
    LIBS   += -L../ffDiaporama_lib
 
    CFLAGS += -W"Missing debug information for"
-   QMAKE_CXXFLAGS_WARN_ON += -Wno-zero-as-null-pointer-constant
+   QMAKE_CXXFLAGS_WARN_ON += -Wno-overloaded-virtual -Wno-inconsistent-missing-override
 
    contains(DEFINES,Q_OS_SOLARIS) {
 
@@ -447,28 +447,14 @@ TRANSLATIONS += $$top_srcdir/locale/ffDiaporama_cz.ts \
 #    ../../locale/ffDiaporama_pt.ts \
 #    ../../locale/ffDiaporama_ru.ts \
 #    ../../locale/ffDiaporama_zh_tw.ts
-#!contains(DEFINES,qmake_destdir){
-DESTDIR=/home/norbert/bin/ffD-bin
-CONFIG(relase, debug|release) {
-   DESTDIR=/home/norbert/bin/ffD-bin
-}
-CONFIG(debug, debug|release) {
-   DESTDIR=/home/norbert/bin/ffD-bin
-}
-#}
-message ("DESTDIR IS "$$DESTDIR)
-message ("PWD IS "$$(PWD))
 
 #--------------------------------------------------------------
 # INSTALLATION
 #--------------------------------------------------------------
-#TARGET.path         = $$PREFIX/bin
-#TARGET.files        = $$TARGET
-TARGET.path         = $$DESTDIR
-#TARGET.files        = $$TARGET
+TARGET.path         = $$PREFIX/bin
+TARGET.files        = $$TARGET
 INSTALLS 	    += TARGET
 
-PREFIX = $$DESTDIR/..
 Licences.path       = $$PREFIX/share/$$APPFOLDER
 Licences.files      = ../../authors.txt \
                       ../../licences.txt \
@@ -553,9 +539,7 @@ win32 {
    # for hevc/h265 and VP9
    DEFINES += ENABLE_XCODECS
 
-include(../../ffdiaporama.pri)
-#DESTDIR defined in ffdiaporama.pri!!!
-transl.path    = $$DESTDIR//locale
+transl.path    = $$PREFIX/share/$$APPFOLDER/locale
 transl.files   = ../../locale/*.qm
 INSTALLS 	    += transl
 message("transl.path $$transl.path")

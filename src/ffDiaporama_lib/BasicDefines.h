@@ -61,11 +61,7 @@
     #include <unistd.h>
 #endif
 
-//============================================
-// Specific for SOLARIS
-//============================================
-
-#ifdef Q_OS_SOLARIS
+#ifdef Q_OS_LINUX
     #define u_int64_t uint64_t
     #define u_int32_t uint32_t
     #define u_int16_t uint16_t
